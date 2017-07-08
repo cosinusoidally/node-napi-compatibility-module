@@ -1,3 +1,4 @@
+#!/bin/bash
 set -x
 # set this to the location of your node-gyp dir:
 MY_GYP_DIR=/home/ljw/.node-gyp/4.8.3
