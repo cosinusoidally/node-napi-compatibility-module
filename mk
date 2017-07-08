@@ -15,8 +15,8 @@ rm node_api.o
 mv napi-compatibility-module.so install/lib
 
 # next build napi-compatibility-module-loader.node . This is used to load
-# napi-compatibility-module.so using dlopen and the flags RTLD_NOW and RTLD_GLOBAL
-# moves the module in to place in install/lib
+# napi-compatibility-module.so using dlopen and the flags RTLD_NOW and RTLD_GLOBAL .
+# Then moves the module in to place in install/lib
 
 # nuke the build dir
 rm -r build
