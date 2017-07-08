@@ -3,12 +3,14 @@ This retrofits N-API module compatibility to node.js 4.X and 6.X
 
 **Warning, the node N-API is still experimental and so is not yet API/ABI stable. Use at your own risk. You may end up having to rebuild any addons you build using the experimental N-API.** 
 
-The N-API implemenation in this repo is based on a slightly modified version of the N-API implementation provided here: https://github.com/nodejs/node-addon-api/
+The N-API implemenation in this repo is based on a slightly modified version of the N-API implementation provided here: https://github.com/nodejs/node-addon-api/ (based off commit b0f2c6fe59d08f2b0c0bd44a43f3362640b84059)
 
 Purpose
 -------
 
 Currently node.js binary native addons need to be recompiled against each major release of node.js. The node.js N-API is intended to resolve this issue by providing an API and ABI stable interface for writing node.js binary addons. This allows the same binary addons to work across multiple versions of node.js . 
+
+This ``node-napi-compatibility-module`` adds the ability to load unmodified N-API addon binaries to node.js 4.X and node.js 6.X . This allows you to build N-API addon binaries with, say, node.js 8.X (tested with 8.1.3) and use those same binaries in node.js 4.X or 6.X
 
 Building
 --------
@@ -41,4 +43,6 @@ You should then be able to use N-API modules using the ``node-napi`` wrapper:
 Limitations
 -----------
 
-In node.js 4.X ``node-napi`` will not load the ``node-napi-compatibility-module`` when in REPL mode (ie when starting ``node-napi`` with no scripts as arguments). If you wish to use ``node-napi-compatibility-module`` with the REPL you must manually ``require`` it.
+* In node.js 4.X ``node-napi`` will not load the ``node-napi-compatibility-module`` when in REPL mode (ie when starting ``node-napi`` with no scripts as arguments). If you wish to use ``node-napi-compatibility-module`` with the REPL you must manually ``require`` it. Doesn't seem to affect node.js 6.X
+
+* Spawned processes will not inherit N-API support (eg processes spawned by ``process.spawn``). Similar to the upstream issue with ``--napi-modules`` (https://github.com/nodejs/abi-stable-node/issues/164).  In node.js 8.X they work around that using ``NODE_OPTIONS`` . Unfortunately ``NODE_OPTIONS`` doesn't seem to be available with node.js 4.X or 6.X . Maybe that will be backported some point.
