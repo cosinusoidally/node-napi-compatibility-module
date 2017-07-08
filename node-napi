@@ -1,0 +1,3 @@
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export NAPI_INSTALL_DIR=$DIR/../lib
+node -r $DIR/../lib/napi-compatibility-module-loader-loader.js "$@"

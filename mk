@@ -24,4 +24,6 @@ node-gyp configure
 node-gyp build
 # move across to install/lib
 mv build/Release/napi-compatibility-module-loader.node install/lib
+cp node-napi install/bin
+cp napi-compatibility-module-loader-loader.js install/lib
 set +x
