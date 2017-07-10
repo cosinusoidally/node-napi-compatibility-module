@@ -1,0 +1,6 @@
+6_object_wrap
+7_factory_wrap
+8_passing_wrapped
+test_async
+test_error
+test_general missing symbol napi_get_version

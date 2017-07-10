@@ -1,0 +1,2 @@
+mkdir -p build/Release
+gcc -I ../../../ -O0 test_array.c -fPIC -shared -o build/Release/test_array.node

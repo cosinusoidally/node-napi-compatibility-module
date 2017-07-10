@@ -25,6 +25,7 @@ Next set ``MY_GYP_DIR`` in ``mk`` to wherever node.js has installed the ``node-g
 
 ```./mk```
 
+
 Using
 -----
 
@@ -39,6 +40,10 @@ you must also add ``install/lib`` to your ``LD_LIBRARY_PATH`` :
 You should then be able to use N-API modules using the ``node-napi`` wrapper:
 
 ```node-napi my_file.js```
+
+Test Suite
+----------
+There is a rough test suite in the ``test`` directory. To use it go in to the ``test/addons-napi`` directory. These are tests ported across from the node.js 8.1.3 source tree (plus some hacked up bits of the node.js 4.8.3 tree) . At the moment tests are run manually by decending in to each directory and running the ``./mk`` command with ``sh ./mk`` and then running ``node-napi ./test.js``. A return code of 0 indicates a test pass. This is still WIP. I'll put together a proper test runner at some point
 
 Limitations
 -----------
