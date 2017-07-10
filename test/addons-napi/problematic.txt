@@ -1,6 +1,14 @@
-6_object_wrap
-7_factory_wrap
-8_passing_wrapped
-test_async
-test_error
+Here is a list of currently problematic tests.
+
+Note I also consider a test problematic if it is written in C++11. I am using GCC 4.4 to build these tests (which does not support C++11) so I cannot use any C++11 tests. I would also much prefer to build in C mode.
+
+6_object_wrap C++11
+7_factory_wrap C++11
+8_passing_wrapped C++11
+test_async C++11
+test_error C++11
 test_general missing symbol napi_get_version
+test_handle_scope FATAL ERROR: EscapeableHandleScope::Escape Escape value set twice probably because compat code is missing this fix: https://github.com/nodejs/node/pull/13651
+test_make_callback C++11
+test_object Error: Invalid pointer passed as argument probably due to compat code missing this commit: https://github.com/nodejs/node/pull/13250
+test_typedarray ReferenceError: Reflect is not defined . Reflect.construct doesn't work on node.js 4.8.3

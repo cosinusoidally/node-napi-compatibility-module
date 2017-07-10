@@ -1,0 +1,2 @@
+mkdir -p build/Release
+gcc -I ../../../ -O0 test_typedarray.c -fPIC -shared -o build/Release/test_typedarray.node
