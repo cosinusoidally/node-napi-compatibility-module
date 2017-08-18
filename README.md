@@ -1,6 +1,6 @@
 # node-napi-compatibility-module
 This retrofits N-API module compatibility to node.js 4.X and 6.X
-
+** Note this is currently out of sync with upstream. I will eventually get around to updating it, but be aware that until then this will be incompatible with modules built against upstream **
 **Warning, the node N-API is still experimental and so is not yet API/ABI stable. Use at your own risk. You may end up having to rebuild any addons you build using the experimental N-API.** 
 
 The N-API implemenation in this repo is based on a slightly modified version of the N-API implementation provided here: https://github.com/nodejs/node-addon-api/ (based off commit b0f2c6fe59d08f2b0c0bd44a43f3362640b84059)
